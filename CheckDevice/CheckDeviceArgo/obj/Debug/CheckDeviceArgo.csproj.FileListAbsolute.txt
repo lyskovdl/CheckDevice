@@ -42,3 +42,6 @@ C:\Users\LDL\Documents\VS_Files\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.csproj
 C:\Users\LDL\Documents\VS_Files\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.MainForm.resources
 C:\Users\LDL\Documents\VS_Files\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.Properties.Resources.resources
 C:\Users\LDL\Documents\VS_Files\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.csproj.GenerateResource.Cache
+C:\Users\LDL\Documents\Git\CheckDevice\CheckDeviceArgo\bin\Debug\CheckDeviceArgo.exe.config
+C:\Users\LDL\Documents\Git\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.exe
+C:\Users\LDL\Documents\Git\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.pdb
