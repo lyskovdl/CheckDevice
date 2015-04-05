@@ -1,8 +1,10 @@
 ﻿
 namespace CheckDeviceArgo
 {
-    static public class Constants
+    public class Constans
     {
-        static public string[] baudRate = new string[] { "115200", "57600", "38400", "28800", "19200", "9600", "4800", "2400", "1200" };
+        public enum ArrowsPicture : int { LeftVisible = 1, RightVisible = 2, NoVisible = 0 }
+
     }
+
 }

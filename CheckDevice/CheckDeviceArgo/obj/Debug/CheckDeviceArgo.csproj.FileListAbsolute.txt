@@ -53,3 +53,14 @@ C:\Users\LDL\Documents\Git\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo
 C:\Users\LDL\Documents\Git\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.MainForm.resources
 C:\Users\LDL\Documents\Git\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.Properties.Resources.resources
 C:\Users\LDL\Documents\Git\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.csproj.GenerateResource.Cache
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Debug\CheckDeviceArgo.exe.config
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.exe
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.pdb
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Debug\CheckDeviceArgo.exe
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Debug\CheckDeviceArgo.pdb
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Debug\CheckDeviceArgo.BL.dll
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Debug\CheckDeviceArgo.BL.pdb
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.csprojResolveAssemblyReference.cache
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.Properties.Resources.resources
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.csproj.GenerateResource.Cache
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Debug\CheckDeviceArgo.MainForm.resources

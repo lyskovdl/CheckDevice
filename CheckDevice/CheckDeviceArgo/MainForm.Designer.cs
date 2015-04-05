@@ -41,6 +41,7 @@ namespace CheckDeviceArgo
             this.numBuffSize = new System.Windows.Forms.NumericUpDown();
             this.pBLeftArrow = new System.Windows.Forms.PictureBox();
             this.pBRightArrow = new System.Windows.Forms.PictureBox();
+            this.prgsBarTransfer = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.numBuffSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBLeftArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRightArrow)).BeginInit();
@@ -168,7 +169,6 @@ namespace CheckDeviceArgo
             this.pBLeftArrow.TabIndex = 7;
             this.pBLeftArrow.TabStop = false;
             this.pBLeftArrow.Visible = false;
-            this.pBLeftArrow.Click += new System.EventHandler(this.pBLeftArrow_Click_1);
             // 
             // pBRightArrow
             // 
@@ -180,7 +180,17 @@ namespace CheckDeviceArgo
             this.pBRightArrow.TabIndex = 7;
             this.pBRightArrow.TabStop = false;
             this.pBRightArrow.Visible = false;
-            this.pBRightArrow.Click += new System.EventHandler(this.pBLeftArrow_Click_1);
+            // 
+            // prgsBarTransfer
+            // 
+            this.prgsBarTransfer.Location = new System.Drawing.Point(22, 158);
+            this.prgsBarTransfer.MarqueeAnimationSpeed = 10;
+            this.prgsBarTransfer.Maximum = 1000;
+            this.prgsBarTransfer.Name = "prgsBarTransfer";
+            this.prgsBarTransfer.Size = new System.Drawing.Size(435, 22);
+            this.prgsBarTransfer.Step = 1000;
+            this.prgsBarTransfer.TabIndex = 8;
+            this.prgsBarTransfer.Value = 500;
             // 
             // MainForm
             // 
@@ -188,6 +198,7 @@ namespace CheckDeviceArgo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(554, 314);
+            this.Controls.Add(this.prgsBarTransfer);
             this.Controls.Add(this.pBRightArrow);
             this.Controls.Add(this.pBLeftArrow);
             this.Controls.Add(this.numBuffSize);
@@ -224,6 +235,7 @@ namespace CheckDeviceArgo
         private System.Windows.Forms.NumericUpDown numBuffSize;
         private System.Windows.Forms.PictureBox pBLeftArrow;
         private System.Windows.Forms.PictureBox pBRightArrow;
+        private System.Windows.Forms.ProgressBar prgsBarTransfer;
 
     }
 }

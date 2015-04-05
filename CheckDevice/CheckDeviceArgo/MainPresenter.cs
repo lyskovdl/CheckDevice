@@ -1,5 +1,6 @@
 ﻿using CheckDeviceArgo.BL;
 using System;
+using System.Threading;
 
 
 namespace CheckDeviceArgo
@@ -9,6 +10,8 @@ namespace CheckDeviceArgo
         private readonly IMainForm _view;
         private readonly IDataTransfer _dataTransfer;
         private readonly IMessageServis _message;
+
+
 
         public MainPresenter(IMainForm view, IDataTransfer dataTransfer, IMessageServis message)
         {
@@ -37,6 +40,11 @@ namespace CheckDeviceArgo
         private void Start()
         {
             _message.ShowMessage("Начинаем тест");
+            _view.ArrowPicture(Constans.ArrowsPicture.LeftVisible);
+            Thread.Sleep(5000);
+            _view.ArrowPicture(Constans.ArrowsPicture.RightVisible);
+            Thread.Sleep(5000);
+            _view.ArrowPicture(Constans.ArrowsPicture.NoVisible);
         }
 
 

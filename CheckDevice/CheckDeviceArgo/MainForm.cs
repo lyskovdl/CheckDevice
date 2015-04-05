@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace CheckDeviceArgo
 {
-    public interface IMainForm
+        public interface IMainForm
     {
-        void ArrowPicture(int direction);
+        void ArrowPicture( Constans.ArrowsPicture arrowsPicture);
         decimal NumBuffSize { get; }
         int PortBaudRate { get; }
         string Port1Appoindet { get; }
@@ -26,6 +26,7 @@ namespace CheckDeviceArgo
         public MainForm()
         {
             InitializeComponent();
+            Constans vars = new Constans();
 
             this.Shown += (s, o) =>
             {
@@ -43,10 +44,28 @@ namespace CheckDeviceArgo
 
         #region Реализация IMainForm
 
-        public void ArrowPicture(int direction)
+        public void ArrowPicture(Constans.ArrowsPicture arrowsPicture)
         {
-
+            switch ((int) arrowsPicture)
+            {
+                case 1:
+                    pBLeftArrow.Visible = true;
+                    break;
+                case 2:
+                    pBLeftArrow.Visible = false;
+                    pBRightArrow.Visible = true;
+                    break;
+                case 0:
+                    pBLeftArrow.Visible = false;
+                    pBRightArrow.Visible = false;
+                    break;
+                default:
+                    break;
+            };
+            pBRightArrow.Refresh();
+            pBLeftArrow.Refresh();
         }
+
         public decimal NumBuffSize { get { return numBuffSize.Value; } }
         public int PortBaudRate { get { return Convert.ToInt32(cbxBaudRate.Text); } }
         public string Port1Appoindet {get { return cbxPort1.Text; }}
@@ -71,22 +90,6 @@ namespace CheckDeviceArgo
             cbxPort2.Items.AddRange(SerialPort.GetPortNames());
             if (cbxPort2.Items.Count > 1) cbxPort2.Text = cbxPort2.Items[1].ToString();
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pBLeftArrow_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pBLeftArrow_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
 
     }
 }
