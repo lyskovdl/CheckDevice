@@ -185,7 +185,6 @@ namespace CheckDeviceArgo
             // prgsBarTest
             // 
             this.prgsBarTest.Location = new System.Drawing.Point(22, 158);
-            this.prgsBarTest.MarqueeAnimationSpeed = 1;
             this.prgsBarTest.Name = "prgsBarTest";
             this.prgsBarTest.Size = new System.Drawing.Size(435, 22);
             this.prgsBarTest.Step = 1;

@@ -98,7 +98,7 @@ namespace CheckDeviceArgo
             prgsBarTest.Visible = true;
             while (i < j)
             {
-                Thread.Sleep(5);
+                Thread.Sleep(50);
                 prgsBarTest.PerformStep();
                 i++;
             } 
