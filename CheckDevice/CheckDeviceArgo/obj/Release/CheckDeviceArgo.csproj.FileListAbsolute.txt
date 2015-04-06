@@ -1,0 +1,11 @@
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Release\CheckDeviceArgo.exe.config
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Release\CheckDeviceArgo.exe
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Release\CheckDeviceArgo.pdb
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Release\CheckDeviceArgo.BL.dll
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\bin\Release\CheckDeviceArgo.BL.pdb
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Release\CheckDeviceArgo.csprojResolveAssemblyReference.cache
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Release\CheckDeviceArgo.MainForm.resources
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Release\CheckDeviceArgo.Properties.Resources.resources
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Release\CheckDeviceArgo.csproj.GenerateResource.Cache
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Release\CheckDeviceArgo.exe
+d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo\obj\Release\CheckDeviceArgo.pdb
