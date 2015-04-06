@@ -25,19 +25,24 @@ namespace CheckDeviceArgo
             if (_view.Port1Appoindet == null | _view.Port2Appointed == null
                 | (_view.Port1Appoindet == _view.Port2Appointed))
             {
-                _message.ShowExclamation("Не выполнены условия для запуска теста. Например:не выбран один из портов.");
+                //_message.ShowExclamation("Не выполнены условия для запуска теста. Например:не выбран один из портов.");
+                Start();
             }
             else Start();
         }
 
         private void Start()
         {
-            int i = 0;
-           _message.ShowMessage("Начинаем тест");
+            //_message.ShowMessage("Начинаем тест");
+            int i=1; int j=10;
+            _view.PrgsBarTestInit(j, 1, true);
+            
             do
             {
+                _view.PrgsBarTestProgress();
+                Thread.Sleep(10);
                 i++;
-            } while (i < 10);
+            } while (i < j);
 
             _view.ArrowPicture(Constans.ArrowsPicture.LeftVisible);
             Thread.Sleep(5000);

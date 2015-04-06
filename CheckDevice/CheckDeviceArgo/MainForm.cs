@@ -14,11 +14,13 @@ namespace CheckDeviceArgo
 {
         public interface IMainForm
     {
-        void ArrowPicture( Constans.ArrowsPicture arrowsPicture);
         decimal NumBuffSize { get; }
         int PortBaudRate { get; }
         string Port1Appoindet { get; }
         string Port2Appointed { get; }
+        void ArrowPicture( Constans.ArrowsPicture arrowsPicture);
+        void PrgsBarTestInit(int prgsBarMax, int prgsBarStep, bool prgsBarVisible);
+        void PrgsBarTestProgress();
         event EventHandler StartTest;
     }
     public partial class MainForm : Form, IMainForm
@@ -32,9 +34,13 @@ namespace CheckDeviceArgo
            {
                Initialize();
            };
-        
-
-
+        }
+        public void Initialize()
+        {
+            cbxPort1.Items.AddRange(SerialPort.GetPortNames());
+            if (cbxPort1.Items.Count != 0) cbxPort1.Text = cbxPort1.Items[0].ToString();
+            cbxPort2.Items.AddRange(SerialPort.GetPortNames());
+            if (cbxPort2.Items.Count > 1) cbxPort2.Text = cbxPort2.Items[1].ToString();
         }
 
  
@@ -47,6 +53,10 @@ namespace CheckDeviceArgo
 
         #region Реализация IMainForm
 
+        public decimal NumBuffSize { get { return numBuffSize.Value; } }
+        public int PortBaudRate { get { return Convert.ToInt32(cbxBaudRate.Text); } }
+        public string Port1Appoindet {get { return cbxPort1.Text; }}
+        public string Port2Appointed {get { return cbxPort2.Text; }}
         public void ArrowPicture(Constans.ArrowsPicture arrowsPicture)
         {
             switch ((int) arrowsPicture)
@@ -69,42 +79,37 @@ namespace CheckDeviceArgo
             pBLeftArrow.Refresh();
         }
 
-        public decimal NumBuffSize { get { return numBuffSize.Value; } }
-        public int PortBaudRate { get { return Convert.ToInt32(cbxBaudRate.Text); } }
-        public string Port1Appoindet {get { return cbxPort1.Text; }}
-        public string Port2Appointed {get { return cbxPort2.Text; }}
+        #region Инициализация градусника теста
+        private readonly int defaultprgsBarStep = 1;
+        private readonly int defaulprgsBarMax = 1;
+        public void PrgsBarTestInit(bool prgsBarVisible)
+        {
+            PrgsBarTestInit(defaulprgsBarMax, defaultprgsBarStep, prgsBarVisible);
+        }
+        public void PrgsBarTestInit(int prgsBarMax, bool prgsBarVisible)
+        {
+            PrgsBarTestInit(prgsBarMax, defaultprgsBarStep, prgsBarVisible);
+        }
+        public void PrgsBarTestInit(int prgsBarMax, int prgsBarStep, bool prgsBarVisible)
+        {
+            prgsBarTest.Minimum = 1;
+            prgsBarTest.Value = 1;
+            prgsBarTest.Step = prgsBarStep;
+            prgsBarTest.Maximum = prgsBarMax;
+            prgsBarTest.Visible = prgsBarVisible;
+            this.Activate();
+        }
+        #endregion
+
+        public void PrgsBarTestProgress()
+        {
+            prgsBarTest.PerformStep();
+        }
+
         public event EventHandler StartTest;
 
         #endregion
 
-
-
-        public void Initialize()
-        {
-            cbxPort1.Items.AddRange(SerialPort.GetPortNames());
-            if (cbxPort1.Items.Count != 0) cbxPort1.Text = cbxPort1.Items[0].ToString();
-            cbxPort2.Items.AddRange(SerialPort.GetPortNames());
-            if (cbxPort2.Items.Count > 1) cbxPort2.Text = cbxPort2.Items[1].ToString();
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int i = 1; int j = 100;
-            prgsBarTest.Minimum = i;
-            prgsBarTest.Value = i;
-            prgsBarTest.Step = i;
-            prgsBarTest.Maximum = j;
-            prgsBarTest.Visible = true;
-            while (i < j)
-            {
-                Thread.Sleep(50);
-                prgsBarTest.PerformStep();
-                i++;
-            } 
-
-        }
-        
 
     }
 }
