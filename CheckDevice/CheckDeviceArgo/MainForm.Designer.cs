@@ -41,7 +41,8 @@ namespace CheckDeviceArgo
             this.numBuffSize = new System.Windows.Forms.NumericUpDown();
             this.pBLeftArrow = new System.Windows.Forms.PictureBox();
             this.pBRightArrow = new System.Windows.Forms.PictureBox();
-            this.prgsBarTransfer = new System.Windows.Forms.ProgressBar();
+            this.prgsBarTest = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numBuffSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBLeftArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBRightArrow)).BeginInit();
@@ -124,7 +125,7 @@ namespace CheckDeviceArgo
             this.btnStartTest.Name = "btnStartTest";
             this.btnStartTest.Size = new System.Drawing.Size(435, 23);
             this.btnStartTest.TabIndex = 4;
-            this.btnStartTest.Text = "button1";
+            this.btnStartTest.Text = "Тест передачи данных";
             this.btnStartTest.UseVisualStyleBackColor = true;
             this.btnStartTest.Click += new System.EventHandler(this.btnStartTest_Click);
             // 
@@ -181,16 +182,25 @@ namespace CheckDeviceArgo
             this.pBRightArrow.TabStop = false;
             this.pBRightArrow.Visible = false;
             // 
-            // prgsBarTransfer
+            // prgsBarTest
             // 
-            this.prgsBarTransfer.Location = new System.Drawing.Point(22, 158);
-            this.prgsBarTransfer.MarqueeAnimationSpeed = 10;
-            this.prgsBarTransfer.Maximum = 1000;
-            this.prgsBarTransfer.Name = "prgsBarTransfer";
-            this.prgsBarTransfer.Size = new System.Drawing.Size(435, 22);
-            this.prgsBarTransfer.Step = 1000;
-            this.prgsBarTransfer.TabIndex = 8;
-            this.prgsBarTransfer.Value = 500;
+            this.prgsBarTest.Location = new System.Drawing.Point(22, 158);
+            this.prgsBarTest.MarqueeAnimationSpeed = 1;
+            this.prgsBarTest.Name = "prgsBarTest";
+            this.prgsBarTest.Size = new System.Drawing.Size(435, 22);
+            this.prgsBarTest.Step = 1;
+            this.prgsBarTest.TabIndex = 8;
+            this.prgsBarTest.Value = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(76, 229);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
@@ -198,7 +208,8 @@ namespace CheckDeviceArgo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(554, 314);
-            this.Controls.Add(this.prgsBarTransfer);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.prgsBarTest);
             this.Controls.Add(this.pBRightArrow);
             this.Controls.Add(this.pBLeftArrow);
             this.Controls.Add(this.numBuffSize);
@@ -235,7 +246,8 @@ namespace CheckDeviceArgo
         private System.Windows.Forms.NumericUpDown numBuffSize;
         private System.Windows.Forms.PictureBox pBLeftArrow;
         private System.Windows.Forms.PictureBox pBRightArrow;
-        private System.Windows.Forms.ProgressBar prgsBarTransfer;
+        private System.Windows.Forms.ProgressBar prgsBarTest;
+        private System.Windows.Forms.Button button1;
 
     }
 }

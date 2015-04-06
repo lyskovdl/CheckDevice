@@ -26,6 +26,7 @@ namespace CheckDeviceArgo
             MainPresenter prezenter = new MainPresenter(form, test, message);
 
             Application.Run(form);
+
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace CheckDeviceArgo
 {
@@ -19,22 +20,24 @@ namespace CheckDeviceArgo
         string Port1Appoindet { get; }
         string Port2Appointed { get; }
         event EventHandler StartTest;
-        event EventHandler<MsgEventArgs> MessageEvent;
     }
     public partial class MainForm : Form, IMainForm
     {
         public MainForm()
         {
             InitializeComponent();
-            Constans vars = new Constans();
+
 
             this.Shown += (s, o) =>
-            {
-                Initialize();
-            };
+           {
+               Initialize();
+           };
+        
+
+
         }
 
-
+ 
         #region Проброс событий
         private void btnStartTest_Click(object sender, EventArgs e)
         {
@@ -71,7 +74,6 @@ namespace CheckDeviceArgo
         public string Port1Appoindet {get { return cbxPort1.Text; }}
         public string Port2Appointed {get { return cbxPort2.Text; }}
         public event EventHandler StartTest;
-        public event EventHandler<MsgEventArgs> MessageEvent;
 
         #endregion
 
@@ -80,16 +82,29 @@ namespace CheckDeviceArgo
         public void Initialize()
         {
             cbxPort1.Items.AddRange(SerialPort.GetPortNames());
-            if (cbxPort1.Items.Count != 0)
-                cbxPort1.Text = cbxPort1.Items[0].ToString();
-            else
-            {
-                if (MessageEvent != null) MessageEvent(this, new MsgEventArgs("Отсутствуют порты"));
-
-            }
+            if (cbxPort1.Items.Count != 0) cbxPort1.Text = cbxPort1.Items[0].ToString();
             cbxPort2.Items.AddRange(SerialPort.GetPortNames());
             if (cbxPort2.Items.Count > 1) cbxPort2.Text = cbxPort2.Items[1].ToString();
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int i = 1; int j = 100;
+            prgsBarTest.Minimum = i;
+            prgsBarTest.Value = i;
+            prgsBarTest.Step = i;
+            prgsBarTest.Maximum = j;
+            prgsBarTest.Visible = true;
+            while (i < j)
+            {
+                Thread.Sleep(5);
+                prgsBarTest.PerformStep();
+                i++;
+            } 
+
+        }
+        
 
     }
 }
