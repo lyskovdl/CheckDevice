@@ -1,4 +1,0 @@
-d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo.BL\bin\Release\CheckDeviceArgo.BL.dll
-d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo.BL\bin\Release\CheckDeviceArgo.BL.pdb
-d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo.BL\obj\Release\CheckDeviceArgo.BL.dll
-d:\LDL\CheckDevice\CheckDevice\CheckDeviceArgo.BL\obj\Release\CheckDeviceArgo.BL.pdb
