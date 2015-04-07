@@ -59,24 +59,28 @@ namespace CheckDeviceArgo
         public string Port2Appointed {get { return cbxPort2.Text; }}
         public void ArrowPicture(Constans.ArrowsPicture arrowsPicture)
         {
-            switch ((int) arrowsPicture)
+            // ensure UI is updated from cocrrect thread
+            this.Invoke((Action)(() =>
             {
-                case 1:
-                    pBLeftArrow.Visible = true;
-                    break;
-                case 2:
-                    pBLeftArrow.Visible = false;
-                    pBRightArrow.Visible = true;
-                    break;
-                case 0:
-                    pBLeftArrow.Visible = false;
-                    pBRightArrow.Visible = false;
-                    break;
-                default:
-                    break;
-            };
-            pBRightArrow.Refresh();
-            pBLeftArrow.Refresh();
+                switch ((int)arrowsPicture)
+                {
+                    case 1:
+                        pBLeftArrow.Visible = true;
+                        break;
+                    case 2:
+                        pBLeftArrow.Visible = false;
+                        pBRightArrow.Visible = true;
+                        break;
+                    case 0:
+                        pBLeftArrow.Visible = false;
+                        pBRightArrow.Visible = false;
+                        break;
+                    default:
+                        break;
+                };
+                pBRightArrow.Refresh();
+                pBLeftArrow.Refresh();
+            }));
         }
 
         #region Инициализация градусника теста
@@ -92,18 +96,26 @@ namespace CheckDeviceArgo
         }
         public void PrgsBarTestInit(int prgsBarMax, int prgsBarStep, bool prgsBarVisible)
         {
-            prgsBarTest.Minimum = 1;
-            prgsBarTest.Value = 1;
-            prgsBarTest.Step = prgsBarStep;
-            prgsBarTest.Maximum = prgsBarMax;
-            prgsBarTest.Visible = prgsBarVisible;
-            this.Activate();
+            // ensure UI is updated from cocrrect thread
+            this.Invoke((Action)(() =>
+            {
+                prgsBarTest.Minimum = 1;
+                prgsBarTest.Value = 1;
+                prgsBarTest.Step = prgsBarStep;
+                prgsBarTest.Maximum = prgsBarMax;
+                prgsBarTest.Visible = prgsBarVisible;
+                this.Activate();
+            }));
         }
         #endregion
 
         public void PrgsBarTestProgress()
         {
-            prgsBarTest.PerformStep();
+            // ensure UI is updated from cocrrect thread
+            this.Invoke((Action)(() =>
+            {
+                prgsBarTest.PerformStep();
+            }));
         }
 
         public event EventHandler StartTest;
