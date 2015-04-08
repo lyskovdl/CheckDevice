@@ -34,21 +34,26 @@ namespace CheckDeviceArgo
         private void Start()
         {
             //_message.ShowMessage("Начинаем тест");
-            int i=1; int j=10;
-            _view.PrgsBarTestInit(j, 1, true);
-            
-            do
-            {
-                _view.PrgsBarTestProgress();
-                Thread.Sleep(10);
-                i++;
-            } while (i < j);
 
-            _view.ArrowPicture(Constans.ArrowsPicture.LeftVisible);
-            Thread.Sleep(5000);
-            _view.ArrowPicture(Constans.ArrowsPicture.RightVisible);
-            Thread.Sleep(5000);
-            _view.ArrowPicture(Constans.ArrowsPicture.NoVisible);
+            // separte thread is used so we do NOT block the UI thread
+            new Thread(() =>
+            {
+                int i = 1; int j = 10;
+                _view.PrgsBarTestInit(j, 1, true);
+
+                do
+                {
+                    _view.PrgsBarTestProgress();
+                    Thread.Sleep(10);
+                    i++;
+                } while (i < j);
+
+                _view.ArrowPicture(Constans.ArrowsPicture.LeftVisible);
+                Thread.Sleep(5000);
+                _view.ArrowPicture(Constans.ArrowsPicture.RightVisible);
+                Thread.Sleep(5000);
+                _view.ArrowPicture(Constans.ArrowsPicture.NoVisible);
+            }).Start();
         }
 
 
